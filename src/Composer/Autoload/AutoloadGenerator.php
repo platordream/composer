@@ -179,7 +179,7 @@ EOF;
             }
             $exportedPrefix = var_export($namespace, true);
             $psr4File .= "    $exportedPrefix => ";
-            $psr4File .= "array(".implode(', ', $exportedPaths)."),\n";
+            $psr4File .= "array_unique(array(".implode(', ', $exportedPaths).")),\n";
         }
         $psr4File .= ");\n";
 
